@@ -1,0 +1,40 @@
+{
+  "name": "simple-portfolio",
+  "version": "0.0.1",
+  "description": "A simple photo portfolio and CMS to update it",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajaska/simple-portfolio"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajaska/simple-portfolio/issues"
+  },
+  "homepage": "https://github.com/ajaska/simple-portfolio",
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "babel-register": "^6.4.3",
+    "express": "^4.13.3",
+    "qs": "^4.0.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.2.1",
+    "redux": "^3.2.1",
+    "redux-thunk": "^1.0.3",
+    "serve-static": "^1.10.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.15",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-runtime": "^6.3.13",
+    "webpack": "^1.11.0",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.9.1"
+  }
+}
