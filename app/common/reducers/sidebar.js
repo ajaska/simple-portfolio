@@ -1,4 +1,4 @@
-import { SET_SIDEBAR } from '../actions'
+import { SET_SIDEBAR } from '../actions/sidebar'
 
 export default function photos(state = [], action) {
   switch (action.type) {
