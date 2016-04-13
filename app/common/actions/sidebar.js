@@ -9,7 +9,7 @@ export function set(items) {
   }
 }
 
-export function setFromAPI() {
+export function setSidebarFromAPI() {
   return dispatch =>
     fetchSidebarItems().then(
       items => dispatch(set(items))

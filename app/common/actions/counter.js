@@ -23,7 +23,7 @@ export function decrement() {
   }
 }
 
-export function setFromAPI() {
+export function setCounterFromAPI() {
   return dispatch =>
     fetchCounter().then(
       value => dispatch(set(value))
