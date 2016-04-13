@@ -16,6 +16,7 @@ import { Provider } from 'react-redux'
 import configureStore from '../common/store/configureStore'
 import App from '../common/containers/App'
 import { fetchCounter } from '../common/api/counter'
+import { setFromAPI } from '../common/actions'
 
 const app = new Express()
 const port = 3000
@@ -29,17 +30,19 @@ app.use(webpackHotMiddleware(compiler))
 app.use(handleRender)
 
 function handleRender(req, res) {
-  // Query our mock API asynchronously
-  fetchCounter(apiResult => {
-    // Read the counter from the request, if provided
-    const params = qs.parse(req.query)
-    const counter = parseInt(params.counter, 10) || apiResult || 0
+  // Read the counter from the request, if provided
+  const params = qs.parse(req.query)
+  const counter = parseInt(params.counter, 10) || 0
 
-    // Compile an initial state
-    const initialState = { counter }
+  // Compile an initial state
+  const initialState = { counter }
 
-    // Create a new Redux store instance
-    const store = configureStore(initialState)
+  // Create a new Redux store instance
+  const store = configureStore(initialState)
+
+  Promise.all([
+    store.dispatch(setFromAPI())
+  ]).then(() => {
 
     // Render the component to a string
     const html = renderToString(

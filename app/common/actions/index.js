@@ -2,6 +2,8 @@ export const SET_COUNTER = 'SET_COUNTER'
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER'
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER'
 
+import { fetchCounter } from '../api/counter';
+
 export function set(value) {
   return {
     type: SET_COUNTER,
@@ -19,6 +21,13 @@ export function decrement() {
   return {
     type: DECREMENT_COUNTER
   }
+}
+
+export function setFromAPI() {
+  return dispatch =>
+    fetchCounter().then(
+      value => dispatch(set(value))
+    );
 }
 
 export function incrementIfOdd() {
