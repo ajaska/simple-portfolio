@@ -3,9 +3,9 @@ import React, { Component, PropTypes } from 'react'
 class Sidebar extends Component {
   render() {
     const { items } = this.props
-    const sidebarItems = items.map(function(item) {
+    const sidebarItems = items.map(function(item, i) {
       return (
-        <li><a className="sidebar-link" href={item.url}>{item.text}</a></li>
+        <li key={i}><a className="sidebar-link" href={item.url}>{item.text}</a></li>
       )
     })
     return (
