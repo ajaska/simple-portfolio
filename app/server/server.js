@@ -17,6 +17,7 @@ import configureStore from '../common/store/configureStore'
 import App from '../common/containers/App'
 import { setCounterFromAPI } from '../common/actions/counter'
 import { setSidebarFromAPI } from '../common/actions/sidebar'
+import { setPhotosFromAPI } from '../common/actions/photo'
 
 const app = new Express()
 const port = 3000
@@ -42,6 +43,7 @@ function handleRender(req, res) {
 
   Promise.all([
     store.dispatch(setCounterFromAPI()),
+    store.dispatch(setPhotosFromAPI()),
     store.dispatch(setSidebarFromAPI())
   ]).then(() => {
 
