@@ -57,6 +57,10 @@ function handleRender(req, res) {
 
     // Send the rendered page back to the client
     res.send(renderFullPage(html, finalState))
+  }).catch((error) => {
+    console.error(error.stack)
+
+    res.status(500).send('Something broke!')
   })
 }
 
